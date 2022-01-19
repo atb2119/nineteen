@@ -1,0 +1,11 @@
+.containerH {
+  border: 1px solid black;
+  height: 10em;
+  width: 32em;
+}
+
+.containerV {
+  border: 1px solid black;
+  height: 32em;
+  width: 10em;
+}

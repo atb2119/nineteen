@@ -1,0 +1,6 @@
+.board {
+  background-color: aqua;
+  height: 92vh;
+  width: 96vw;
+  border: 5px solid black;
+}
