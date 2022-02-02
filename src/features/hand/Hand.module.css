@@ -1,11 +1,30 @@
-.containerH {
+.playerSpace {
   border: 1px solid black;
-  height: 10em;
-  width: 32em;
+  height: 20em;
+  width: 50em;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.containerV {
-  border: 1px solid black;
-  height: 32em;
-  width: 10em;
+.playerSpace.p2 {
+  transform: rotate(180deg);
+}
+
+.downCards {
+  border: 1px solid yellow;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inHand {
+  border: 1px solid green;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
 }

@@ -3,4 +3,8 @@
   height: 92vh;
   width: 96vw;
   border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
