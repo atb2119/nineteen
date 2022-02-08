@@ -6,6 +6,7 @@ import { Deck } from "../deck/Deck";
 import { deal } from "./boardSlice";
 import Hand from "../hand/Hand";
 import PlayArea from "../PlayArea/PlayArea";
+import ScoreBoard from "../scoreBoard/ScoreBoard";
 
 const Board = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,11 @@ const Board = () => {
   return (
     <div className={styles.board}>
       <Hand playerNum={1} />
-      <PlayArea />
+      <div className={styles.middleWrapper}>
+        <ScoreBoard />
+        <PlayArea />
+      </div>
+
       <Hand playerNum={0} />
     </div>
   );

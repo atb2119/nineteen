@@ -1,3 +1,10 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 45vw;
+  border: 1px solid orange;
+}
+
 .playerSpace {
   border: 1px solid black;
   height: 20em;
@@ -27,4 +34,10 @@
   display: flex;
   justify-content: center;
   gap: 0.2em;
+}
+
+button {
+  float: right;
+  width: 2em;
+  height: 2em;
 }

@@ -8,3 +8,8 @@
   justify-content: space-between;
   align-items: center;
 }
+.middleWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
