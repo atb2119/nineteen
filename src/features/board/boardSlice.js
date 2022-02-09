@@ -16,12 +16,12 @@ const initialState = {
     {
       hand: [],
       down: [],
-      up: [],
+      blind: [],
     },
     {
       hand: [],
       down: [],
-      up: [],
+      blind: [],
     },
   ],
   //cards in play pile
@@ -42,37 +42,39 @@ export const boardSlice = createSlice({
       state.players.forEach((player) => {
         for (let i = 0; i < 3; i++) {
           player.down.push(state.deck.pop());
-          player.up.push(state.deck.pop());
+          player.blind.push(state.deck.pop());
           player.hand.push(state.deck.pop());
         }
       });
     },
     playFromHand: (state, action) => {
-      console.log(action.payload);
-      const { player, card } = action.payload;
+      const { player, card, loc } = action.payload;
       if (player !== state.turn) {
         console.log("not your turn");
       } else {
         state.playArea.push(card);
-        const snapshot = current(state.players[player].hand).filter(
+        const snapshot = current(state.players[player][loc]).filter(
           (ele) => card !== ele
         );
-        state.players[player].hand = snapshot;
+        state.players[player][loc] = snapshot;
         state.turn = state.turn === 0 ? 1 : 0;
       }
     },
     playTen: (state, action) => {
-      const { player } = action.payload;
+      const { player, card, loc } = action.payload;
       if (player !== state.turn) {
         console.log("not your turn");
       } else {
         console.log("you played a ten");
         state.playArea = [];
+        const snapshot = current(state.players[player][loc]).filter(
+          (ele) => card !== ele
+        );
+        state.players[player][loc] = snapshot;
       }
     },
     pickup: (state, action) => {
       const playerNum = action.payload;
-      console.log(action.payload);
       const snapshot = state.playArea;
       state.players[playerNum].hand = [
         ...state.players[playerNum].hand,

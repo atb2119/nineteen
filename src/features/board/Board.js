@@ -27,13 +27,13 @@ const Board = () => {
 
   return (
     <div className={styles.board}>
-      <Hand playerNum={1} />
+      <Hand playerNum={1} cpuMode={true} />
       <div className={styles.middleWrapper}>
         <ScoreBoard />
         <PlayArea />
       </div>
 
-      <Hand playerNum={0} />
+      <Hand playerNum={0} cpuMode={false} />
     </div>
   );
 };

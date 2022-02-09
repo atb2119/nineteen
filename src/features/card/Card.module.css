@@ -27,3 +27,14 @@
   text-align: center;
   transform: translate(-50%, 0);
 }
+
+.blind {
+  display: inline-block;
+  position: relative;
+  width: 5em;
+  height: 7em;
+  box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+  border-radius: 0.25em;
+  background-image: url("../../../public/cardback.jpg");
+  background-size: contain;
+}
